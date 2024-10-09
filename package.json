@@ -3,15 +3,22 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "astro": "astro",
     "build": "astro check && astro build",
+    "check": "astro check && biome ci",
+    "dev": "astro dev",
+    "format": "biome format --write",
+    "lint:fix": "biome lint --write",
+    "lint": "biome lint",
     "preview": "astro preview",
-    "astro": "astro"
+    "start": "astro dev"
   },
   "dependencies": {
-    "astro": "^4.15.12",
     "@astrojs/check": "^0.9.4",
+    "astro": "^4.15.12",
     "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.3"
   }
 }
