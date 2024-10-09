@@ -1,0 +1,16 @@
+---
+import type { SocialLinkType } from "../siteData";
+interface Props {
+  social: SocialLinkType;
+}
+
+const { social } = Astro.props;
+---
+
+<a
+  href={social.url}
+  target="_blank"
+  rel="noreferrer"
+  class="social-link"
+  title={social.title}>{social.label}</a
+>

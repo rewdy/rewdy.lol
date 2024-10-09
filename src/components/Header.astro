@@ -1,0 +1,42 @@
+---
+interface Props {
+  isHome?: boolean;
+}
+import LinkOrNot from "./LinkOrNot.astro";
+import Section from "./Section.astro";
+
+import { Image } from "astro:assets";
+
+import starSvg from "../images/star.svg";
+import { siteTitle } from "../siteData";
+import Intro from "./Intro.astro";
+
+import "./Header.scss";
+
+const { isHome = false } = Astro.props;
+const sectionClasses = ["section-primary"];
+if (!isHome) {
+  sectionClasses.push("section-condensed section-flex");
+}
+---
+
+<header>
+  <Section cssClass={sectionClasses.join(" ")}>
+    <div class="star">
+      <LinkOrNot isLink={isHome} href="/" title="Go home">
+        <Image src={starSvg} alt="A star" />
+      </LinkOrNot>
+    </div>
+    {
+      isHome ? (
+        <Intro />
+      ) : (
+        <div class="inner-heading">
+          <LinkOrNot isLink={isHome} href="/" title="Go home">
+            {siteTitle}
+          </LinkOrNot>
+        </div>
+      )
+    }
+  </Section>
+</header>

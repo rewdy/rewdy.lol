@@ -1,0 +1,121 @@
+@import "./vars";
+@import "./base";
+
+.section {
+  .liner {
+    box-sizing: border-box;
+    padding: 3rem 4rem;
+    margin: 0;
+    width: 100%;
+    max-width: 1000px;
+    @media only screen and (max-width: $breakpoint-sm) {
+      padding: 2rem;
+    }
+  }
+  .liner-center {
+    padding: 2rem 4rem;
+  }
+  &-primary {
+    background: var(--bg) var(--wave-img);
+    background-size: 60px 15px;
+    color: var(--theme-teal);
+  }
+  &-more {
+    background-color: var(--bg-white);
+    .h-wrap {
+      display: inline-block;
+      background-color: var(--theme-blue);
+      color: var(--bg-white);
+      padding: 0.75rem 3rem 0.75rem 0.75rem;
+    }
+  }
+  &-smush {
+    .liner {
+      padding-top: 0;
+    }
+    h2 {
+      position: relative;
+      transform: translateY(-50%);
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer {
+  color: var(--gray);
+}
+
+.project-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  .project-list-item {
+    width: 50%;
+    list-style: none;
+    margin: 0 0 var(--font-size) 0;
+    padding: 0;
+    @media only screen and (max-width: $breakpoint-sm) {
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+  .project-list-item-link {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: var(--color);
+    position: relative;
+    &:before {
+      content: ">";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 1em;
+      font-weight: var(--font-weight-bold);
+      color: var(--gray);
+    }
+    &:hover {
+      .project-list-item-label {
+        color: var(--theme-blue-dark);
+      }
+      background-color: var(--screen-teal);
+      animation: breathe 2s linear infinite;
+    }
+  }
+  .project-list-item-label,
+  .project-list-item-desc {
+    display: block;
+  }
+  .project-list-item-label {
+    font-weight: var(--font-weight-bold);
+    color: var(--theme-blue);
+  }
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.03);
+  }
+  95% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin-it {
+  0% {
+    transform: rotate(0);
+  }
+  60% {
+    transform: rotate(200deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+}

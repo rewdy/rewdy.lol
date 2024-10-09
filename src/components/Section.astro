@@ -1,0 +1,16 @@
+---
+interface Props {
+  cssClass?: string;
+  center?: boolean;
+}
+
+import "./Section.scss";
+
+const { cssClass, center } = Astro.props;
+---
+
+<section class={`section ${cssClass}`}>
+  <div class={center ? "liner-center" : "liner"}>
+    <slot />
+  </div>
+</section>

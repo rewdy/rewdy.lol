@@ -1,0 +1,28 @@
+---
+import { salutation, socialLinks as social } from "../siteData";
+import SocialLink from "./SocialLink.astro";
+
+
+---
+
+<h1>{salutation}</h1>
+<p>
+  I work as a full-stack software engineer, helping to design and build
+  farming-related software in Des Moines, Iowa.
+</p>
+<p>
+  In the past I have worked in graphic design, product design, and marketing. I
+  get a kick out of building things that make people smile. ☺️
+</p>
+<p>
+  You can find me around the internet at:{" "}
+  <SocialLink social={social.twitter} />,{" "}
+  <SocialLink social={social.instagram} />,{" "}
+  <SocialLink social={social.github} />,{" "}
+  <SocialLink social={social.gitlab} />, and{" "}
+  <SocialLink social={social.linkedin} />.
+</p>
+<p>
+  If you want to get in touch with me, feel free to @mention or DM me on twitter
+  or linkedin.
+</p>

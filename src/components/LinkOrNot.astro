@@ -1,0 +1,19 @@
+---
+interface Props {
+  isLink: boolean;
+  href?: string;
+  title?: string;
+}
+
+const { isLink, href, title } = Astro.props;
+---
+
+{
+  isLink ? (
+    <a href={href} title={title}>
+      <slot />
+    </a>
+  ) : (
+    <slot />
+  )
+}

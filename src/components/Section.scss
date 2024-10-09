@@ -1,0 +1,62 @@
+@import "../scss/_vars.scss";
+
+.section {
+  .liner {
+    box-sizing: border-box;
+    padding: var(--section-pad-y) var(--section-pad-x);
+    margin: 0;
+    width: 100%;
+    max-width: 1000px;
+    @media only screen and (max-width: $breakpoint-sm) {
+      padding: var(--section-pad-x-sm);
+    }
+  }
+  .liner-center {
+    padding: 2rem 4rem;
+  }
+  &-primary {
+    background: var(--bg) url(../../images/wave.svg);
+    background-size: 60px 15px;
+    color: var(--theme-teal);
+  }
+  .h-wrap {
+    display: inline-block;
+    background-color: var(--theme-teal);
+    font-size: 1rem;
+    color: #fff;
+    padding: 0.75rem 3rem 0.75rem 0.75rem;
+  }
+  &-article,
+  &-more {
+    background-color: var(--white);
+    .h-wrap {
+      background-color: var(--theme-blue);
+    }
+  }
+  &-condensed {
+    .liner {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+  &-smush {
+    .liner {
+      padding-top: 0;
+    }
+    h2 {
+      position: relative;
+      transform: translateY(-50%);
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+  &-flex {
+    .liner {
+      display: flex;
+      align-items: center;
+      > * + * {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

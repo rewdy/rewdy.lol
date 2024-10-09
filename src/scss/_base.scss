@@ -1,0 +1,53 @@
+html {
+  // font stuff goes on HTML so rems properly represent doc text size
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+body {
+  background-color: var(--bg);
+  color: var(--color);
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (max-width: $breakpoint-sm) {
+  body {
+    font-size: 20px;
+    line-height: 1.25em;
+  }
+}
+
+h1,
+h2 {
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+h1 {
+  font-size: 2.25em;
+  line-height: 1.2em;
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+h2 {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+p {
+  margin: 0 0 var(--margin-bottom) 0;
+  letter-spacing: 0.05em;
+}
+a {
+  color: var(--accent);
+}
+a:hover {
+  color: var(--link-hover);
+}
+
+.text-small {
+  font-size: 0.8rem;
+}
+.text-center {
+  text-align: center;
+}
