@@ -1,0 +1,49 @@
+@import "../scss/vars";
+
+.project-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  .project-list-item {
+    width: 50%;
+    list-style: none;
+    margin: 0 0 var(--font-size) 0;
+    padding: 0;
+    @media only screen and (max-width: $breakpoint-sm) {
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+  .project-list-item-link {
+    display: block;
+    padding: 1em 1em 1em 2em;
+    text-decoration: none;
+    color: var(--color);
+    position: relative;
+    &:before {
+      content: ">";
+      display: block;
+      position: absolute;
+      left: 1em;
+      top: 1em;
+      font-weight: var(--font-weight-bold);
+      color: var(--gray);
+    }
+    &:hover {
+      .project-list-item-label {
+        color: var(--theme-blue-dark);
+      }
+      background-color: var(--screen-teal);
+      animation: breathe 1500ms ease-in-out infinite;
+    }
+  }
+  .project-list-item-label,
+  .project-list-item-desc {
+    display: block;
+  }
+  .project-list-item-label {
+    font-weight: var(--font-weight-bold);
+    color: var(--theme-blue);
+  }
+}

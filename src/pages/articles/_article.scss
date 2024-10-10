@@ -8,7 +8,7 @@ $link-bg-width: 3rem;
 .article a {
   &:hover {
     background: linear-gradient(
-      100deg,
+      120deg,
       var(--accent) 0,
       var(--pop) $link-bg-width * 0.5,
       var(--accent) $link-bg-width

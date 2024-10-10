@@ -8,4 +8,14 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://rewdy.lol",
   integrations: [mdx(), sitemap()],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // This is needed to tell vite to use the new sass api
+          api: "modern-compiler", 
+        },
+      },
+    },
+  },
 });

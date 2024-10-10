@@ -43,7 +43,7 @@ const { title, isHome = false } = Astro.props;
       <Section center>
         <!-- lol, yeah. that's some inline javascript. 😆 -->
         <p class="text-small text-center">
-          &copy; <script>
+          &copy; <script is:inline>
             document.write(`${new Date().getFullYear()}`);
           </script> Andrew Meyer
         </p>

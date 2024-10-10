@@ -2,7 +2,7 @@
 // Only really have these so I can use them with color functions as needed.
 $bg: #f8f8f8;
 $color: #333;
-$gray: #888;
+$gray: #999;
 $screen: #e6e6e6;
 
 $pop: #f93deb;
@@ -16,6 +16,7 @@ $theme-teal-dark: adjust-color($theme-teal, $lightness: -10%);
 $font-family: "Karla", sans-serif;
 $font-size: 24px;
 $font-size-sm: 0.8rem;
+$font-size-code: 0.75rem;
 $line-height: 1.5em;
 
 $font-weight-bold: 600;
@@ -33,6 +34,7 @@ $breakpoint-sm: 540px;
   --bg: #{$bg};
   --color: #{$color};
   --bg-white: #fff;
+  --white: #fff;
   --gray: #{$gray};
   --screen: #{$screen};
   --pop: #{$pop};
@@ -47,8 +49,9 @@ $breakpoint-sm: 540px;
   --font-family: #{$font-family};
   --font-size: #{$font-size};
   --font-size-sm: #{$font-size-sm};
+  --font-size-code: #{$font-size-code};
   --line-height: #{$line-height};
-  --line-color: #{$gray};
+  --line-color: #eee;
   --font-weight-bold: #{$font-weight-bold};
   --margin-bottom: #{$margin-bottom};
   --section-pad-x: #{$section-pad-x};
@@ -68,5 +71,6 @@ $breakpoint-sm: 540px;
         $alpha: -0.8
       )};
     --wave-img: url("/wave-night.svg");
+    --line-color: #888;
   }
 }

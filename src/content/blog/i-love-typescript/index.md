@@ -1,6 +1,6 @@
 ---
 title: Typescript quick reference
-date: "2023-07-31T00:00:00.000Z"
+date: "2024-10-10T00:00:00.000Z"
 description: "Things I wish I knew when I started learning TypeScript"
 ---
 

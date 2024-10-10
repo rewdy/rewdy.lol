@@ -5,6 +5,7 @@ html {
   font-weight: 300;
   font-size: var(--font-size);
   line-height: var(--line-height);
+  scroll-behavior: smooth;
 }
 body {
   background-color: var(--bg);
@@ -143,8 +144,20 @@ hr {
   background-color: var(--line-color);
 }
 
+code {
+  font-size: var(--font-size-code);
+}
+
 pre {
+  // code blocks are lines wrapped in <code /> within a <pre /> tag
   padding: 1em;
-  font-size: 0.75rem;
+  font-size: var(--font-size-code);
   line-height: 1.75;
+}
+
+p code {
+  color: var(--accent);
+  background-color: var(--screen);
+  padding: 2px 4px;
+  border-radius: 4px;
 }
