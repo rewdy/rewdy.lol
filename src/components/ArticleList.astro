@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "./FormattedDate.astro";
+
+interface Props {
+  posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ol class="articles-list">
+  {posts.map((post) => (
+    <li>
+      <article class="article-list-item" itemscope itemtype="http://schema.org/Article">
+        <header>
+          <h2>
+            <a href={`articles/${post.slug}`} itemprop="url">
+              <span itemprop="headline">{post.data.title}</span>
+            </a>
+          </h2>
+          <FormattedDate date={post.data.date} small />
+        </header>
+        <p itemprop="description">{post.data.description}</p>
+        <p>
+          <a href={`articles/${post.slug}`} class="btn btn-outline">
+            Om nom let me read &rarr;
+          </a>
+        </p>
+      </article>
+    </li>
+  ))}
+</ol>

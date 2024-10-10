@@ -1,0 +1,33 @@
+@import "../scss/vars";
+
+.article-nav {
+  border-top: 1px dotted var(--line-color-light);
+  background-color: var(--white);
+  padding: 1rem var(--section-pad-x);
+  @media only screen and (max-width: $breakpoint-sm) {
+    padding: 1rem var(--section-pad-x-sm);
+  }
+}
+.article-nav-links {
+  display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  li {
+    flex: 1;
+    text-align: center;
+  }
+  li:first-child {
+    text-align: left;
+  }
+  li:last-child {
+    text-align: right;
+  }
+  @media only screen and (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    li {
+      padding: 1rem 0;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.article h1,
+.article .h1 {
+  color: var(--theme-teal);
+}
+
+$link-bg-width: 3rem;
+
+.article a {
+  &:hover {
+    background: linear-gradient(
+      100deg,
+      var(--accent) 0,
+      var(--pop) $link-bg-width * 0.5,
+      var(--accent) $link-bg-width
+    );
+    background-size: $link-bg-width 1rem;
+    animation: gradient-slide 1s linear 250ms infinite;
+    color: var(--white);
+  }
+}
+
+.article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes gradient-slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -$link-bg-width 0;
+  }
+}

@@ -3,6 +3,9 @@
   position: relative;
   left: -12px;
   margin: 0 0 2rem 0;
+  .section-condensed & {
+    margin: 0;
+  }
   &:hover {
     animation: spin-it 1s linear;
     animation-direction: normal;

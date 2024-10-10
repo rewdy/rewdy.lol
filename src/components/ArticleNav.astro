@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import "./ArticleNav.scss";
+
+interface Props {
+  next?: CollectionEntry<"blog">;
+  previous?: CollectionEntry<"blog">;
+}
+
+const { previous, next } = Astro.props;
+---
+<nav class="article-nav">
+  <ul class="article-nav-links">
+    <li>
+      {previous && (
+        <a href={previous.slug} rel="prev">
+          &larr; {previous.data.title}
+        </a>
+      )}
+    </li>
+    <li>
+      <a href="#top">Top</a> / <a href="/">Home</a>
+    </li>
+    <li>
+      {next && (
+        <a href={next.slug} rel="next">
+          {next.data.title} &rarr;
+        </a>
+      )}
+    </li>
+  </ul>
+</nav>

@@ -23,7 +23,7 @@ if (!isHome) {
 <header>
   <Section cssClass={sectionClasses.join(" ")}>
     <div class="star">
-      <LinkOrNot isLink={isHome} href="/" title="Go home">
+      <LinkOrNot isLink={!isHome} href="/" title="Go home">
         <Image src={starSvg} alt="A star" />
       </LinkOrNot>
     </div>
@@ -32,7 +32,7 @@ if (!isHome) {
         <Intro />
       ) : (
         <div class="inner-heading">
-          <LinkOrNot isLink={isHome} href="/" title="Go home">
+          <LinkOrNot isLink={!isHome} href="/" title="Go home">
             {siteTitle}
           </LinkOrNot>
         </div>

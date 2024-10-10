@@ -15,6 +15,7 @@ $theme-teal-dark: adjust-color($theme-teal, $lightness: -10%);
 
 $font-family: "Karla", sans-serif;
 $font-size: 24px;
+$font-size-sm: 0.8rem;
 $line-height: 1.5em;
 
 $font-weight-bold: 600;
@@ -45,7 +46,9 @@ $breakpoint-sm: 540px;
   --wave-img: url("/wave.svg");
   --font-family: #{$font-family};
   --font-size: #{$font-size};
+  --font-size-sm: #{$font-size-sm};
   --line-height: #{$line-height};
+  --line-color: #{$gray};
   --font-weight-bold: #{$font-weight-bold};
   --margin-bottom: #{$margin-bottom};
   --section-pad-x: #{$section-pad-x};

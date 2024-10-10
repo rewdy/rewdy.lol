@@ -1,0 +1,29 @@
+---
+import "./FormattedDate.scss";
+
+interface Props {
+  date: Date;
+  small?: boolean;
+}
+
+const { date, small } = Astro.props;
+
+const classList = ["article-date"];
+if (small) {
+  classList.push("article-date-small");
+}
+---
+
+<div class={classList.join(" ")}>
+	<span>
+		<time datetime={date.toISOString()}>
+			{
+				date.toLocaleDateString('en-us', {
+					year: 'numeric',
+					month: 'short',
+					day: 'numeric',
+				})
+			}
+		</time>
+	</span>
+</div>

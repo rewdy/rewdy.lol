@@ -6,7 +6,7 @@
     "useIgnoreFile": false
   },
   "files": {
-    "ignoreUnknown": true,
+    "ignoreUnknown": false,
     "ignore": [".npm/*"]
   },
   "formatter": {

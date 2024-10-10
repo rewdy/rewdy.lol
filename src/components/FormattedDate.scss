@@ -1,0 +1,22 @@
+.article-date {
+  margin-bottom: 3rem;
+  span {
+    display: inline-block;
+    background-color: var(--theme-blue);
+    font-size: 1rem;
+    color: #fff;
+    padding: 0.25rem 3rem 0.25rem 0.75rem;
+    font-size: var(--font-size-sm);
+  }
+  &.article-date-small {
+    margin-bottom: var(--margin-bottom);
+    span {
+      display: inline-block;
+      background-color: var(--theme-blue);
+      font-size: 1rem;
+      color: #fff;
+      padding: 0 3rem 0 0.75rem;
+      font-size: var(--font-size-sm);
+    }
+  }
+}

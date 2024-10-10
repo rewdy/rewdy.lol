@@ -56,6 +56,11 @@ export const socialLinks: Record<string, SocialLinkType> = {
  */
 export const projectLinks = [
   {
+    label: "Rewdy's Recipes",
+    description: "A little site where I share some recipes I invent",
+    url: "http://recipes.rewdy.lol",
+  },
+  {
     label: "Zoom Wow",
     description: "Make zooming text gifs to wow your frenemies!",
     url: "https://zoom-wow.rewdy.lol",

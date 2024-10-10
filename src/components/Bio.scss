@@ -1,0 +1,14 @@
+.bio {
+  margin: 2rem 0;
+  .byline {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--margin-bottom);
+    .avatar {
+      margin-right: var(--margin-bottom);
+    }
+  }
+  .bio-avatar {
+    border-radius: 50%;
+  }
+}

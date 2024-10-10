@@ -1,0 +1,21 @@
+---
+import ArticleList from "./ArticleList.astro";
+import { getCollection } from "astro:content";
+import Section from "./Section.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Section>
+  <h2>
+    <span class="h-wrap">
+      <span role="img" title="shrug">
+        🤷‍♂️
+      </span>{" "}
+      Articles or whatnot
+    </span>
+  </h2>
+  <ArticleList posts={posts} />
+</Section>

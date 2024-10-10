@@ -1,0 +1,60 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Bio from "../../components/Bio.astro";
+
+import "./article.scss";
+import type { InferGetStaticPropsType } from "astro";
+import ArticleNav from "../../components/ArticleNav.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  // sort so we can make prev/next links
+  const sortedPosts = posts.sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+
+  return sortedPosts.map((post, index) => {
+    const prevIndex = index > 0 ? index - 1 : undefined;
+    const nextIndex = index < sortedPosts.length ? index + 1 : undefined;
+    return {
+      params: { slug: post.slug },
+      props: {
+        post,
+        next: nextIndex !== undefined ? sortedPosts[nextIndex] : undefined,
+        previous: prevIndex !== undefined ? sortedPosts[prevIndex] : undefined,
+      },
+    };
+  });
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+// type Props = CollectionEntry<"blog">;
+
+const { post, next, previous } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+  <Section cssClass="section-article">
+    <article
+      class="article"
+      itemscope
+      itemtype="http://schema.org/Article"
+    >
+      <header>
+        <FormattedDate date={post.data.date} />
+        <h1 itemprop="headline">{post.data.title}</h1>
+      </header>
+      <Content />
+      <hr />
+      <footer>
+        <Bio />
+      </footer>
+    </article>
+  </Section>
+  <ArticleNav next={next} previous={previous} />
+</Layout>

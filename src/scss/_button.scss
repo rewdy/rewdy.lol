@@ -1,0 +1,17 @@
+.btn {
+  font-size: var(--font-size-sm);
+  display: inline-block;
+  padding: 0.25em 1em;
+  &-outline {
+    text-decoration: none;
+    border: 1px solid currentColor;
+  }
+  &-accent {
+    color: #fff;
+    background-color: var(--accent);
+  }
+  &-pop {
+    color: #fff;
+    background-color: var(--pop);
+  }
+}

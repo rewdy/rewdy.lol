@@ -1,0 +1,32 @@
+---
+import Section from "./Section.astro";
+
+import { projectLinks as projects } from "../siteData.ts";
+---
+
+<Section cssClass="section-more section-smush">
+  <h2>
+    <span class="h-wrap">
+      <span role="img" aria-label="fire">
+        🔥
+      </span>{" "}
+      Hot projects
+    </span>
+  </h2>
+  <ul class="project-list">
+    {projects.map((project) => (
+      <li class="project-list-item">
+        <a
+          href={project.url}
+          rel="nofollow"
+          class="project-list-item-link"
+        >
+          <span class="project-list-item-label">{project.label}</span>
+          <span class="project-list-item-desc">
+            {project.description}
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Section>

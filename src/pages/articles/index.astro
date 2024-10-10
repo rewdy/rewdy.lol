@@ -1,0 +1,17 @@
+---
+import ArticleList from "../../components/ArticleList.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Section from "../../components/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Layout title="Articles">
+  <Section>
+    <ArticleList posts={posts} />
+  </Section>
+</Layout>

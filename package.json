@@ -1,5 +1,5 @@
 {
-  "name": "rewdy.lol-astro-2",
+  "name": "rewdy-lol-astro",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -15,11 +15,15 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^3.1.7",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.2.0",
     "astro": "^4.15.12",
     "typescript": "^5.6.3"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
-    "sass": "1.79.4"
+    "sass": "1.79.4",
+    "sharp": "^0.33.5"
   }
 }

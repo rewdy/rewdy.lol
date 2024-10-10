@@ -7,15 +7,13 @@ interface Props {
 import { Image } from "astro:assets";
 import Header from "../components/Header.astro";
 import Section from "../components/Section.astro";
-import { description, siteTitle } from "../siteData";
+import { description } from "../siteData";
 import "../scss/style.scss";
 import madeWithMacos from "../images/made-with-macos.png";
-import HeaderComment from "../components/HeaderComment.astro";
 
 const { title, isHome = false } = Astro.props;
 ---
-
-<!-- <HeaderComment /> --><!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
