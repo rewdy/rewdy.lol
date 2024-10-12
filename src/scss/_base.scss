@@ -95,23 +95,26 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin-bottom: var(--margin-bottom);
+  font-size: 0.8rem;
+  line-height: 1.4;
   &.table-inline {
     width: auto;
   }
   tr td,
   tr th {
-    padding: 0.15rem 0.33rem;
+    padding: 0.35rem 0.33rem;
   }
   thead {
     tr th {
       font-size: var(--font-size-sm);
       border-bottom: 1px solid var(--line-color);
+      text-align: left;
     }
   }
   tbody {
     tr {
       td {
-        border-bottom: 1px dotted var(--line-color-light);
+        border-bottom: 1px dotted var(--line-color);
       }
       th {
         font-weight: var(--font-weight-bold);
@@ -162,6 +165,10 @@ p code {
   background-color: var(--screen);
   padding: 2px 4px;
   border-radius: 4px;
+}
+
+small {
+  font-size: var(--font-size-sm);
 }
 
 @each $tag, $colors in $theme-default-map {
