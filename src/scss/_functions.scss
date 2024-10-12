@@ -1,0 +1,17 @@
+@use "sass:math";
+@use "sass:color";
+
+@function color-brightness($color) {
+  $sum: color.channel($color, "red", $space: rgb) +
+    color.channel($color, "green", $space: rgb) +
+    color.channel($color, "blue", $space: rgb);
+  @return percentage(math.div($sum, (255 * 3)));
+}
+
+@function to-text($color) {
+  @if (color-brightness($color) > 65%) {
+    @return #000; // black for light backgrounds
+  } @else {
+    @return #fff; // white for darker backgrounds
+  }
+}

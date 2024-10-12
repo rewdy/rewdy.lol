@@ -15,7 +15,7 @@
 }
 
 .inner-heading {
-  color: var(--accent);
+  color: var(--theme-accent);
   font-size: 1.2rem;
   font-weight: var(--font-weight-bold);
   a {
@@ -23,7 +23,7 @@
     text-decoration: none;
     &:hover {
       text-decoration: underline;
-      color: var(--color);
+      color: var(--text-color);
     }
   }
 }

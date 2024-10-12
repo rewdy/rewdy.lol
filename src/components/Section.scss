@@ -15,22 +15,24 @@
     padding: 2rem 4rem;
   }
   &-primary {
-    background: var(--bg) url(../../images/wave.svg);
+    background: var(--bg-color) var(--wave-img);
     background-size: 60px 15px;
-    color: var(--theme-teal);
+    color: var(--theme-alt);
   }
   .h-wrap {
     display: inline-block;
-    background-color: var(--theme-teal);
+    background-color: var(--theme-alt);
+    color: var(--theme-alt-text);
     font-size: 1rem;
     color: #fff;
     padding: 0.75rem 3rem 0.75rem 0.75rem;
   }
   &-article,
   &-more {
-    background-color: var(--white);
+    background-color: var(--bg-color);
     .h-wrap {
-      background-color: var(--theme-blue);
+      background-color: var(--theme-secondary);
+      color: var(--theme-secondary-text);
     }
   }
   &-condensed {

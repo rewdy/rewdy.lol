@@ -19,7 +19,7 @@
     display: block;
     padding: 1em 1em 1em 2em;
     text-decoration: none;
-    color: var(--color);
+    color: var(--text-color);
     position: relative;
     &:before {
       content: ">";
@@ -28,13 +28,13 @@
       left: 1em;
       top: 1em;
       font-weight: var(--font-weight-bold);
-      color: var(--gray);
+      color: var(--text-muted);
     }
     &:hover {
       .project-list-item-label {
-        color: var(--theme-blue-dark);
+        filter: brightness(0.9);
       }
-      background-color: var(--screen-teal);
+      background-color: var(--screen-alt);
       animation: breathe 1500ms ease-in-out infinite;
     }
   }
@@ -44,6 +44,6 @@
   }
   .project-list-item-label {
     font-weight: var(--font-weight-bold);
-    color: var(--theme-blue);
+    color: var(--theme-secondary);
   }
 }

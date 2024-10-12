@@ -1,0 +1,103 @@
+@use "sass:color";
+
+// These colors should only be used within this file to
+// set other colors in the map.
+$color-default-pink: #f93deb;
+$color-default-purple: #870be0;
+$color-default-teal: #1296af;
+$color-default-blue: #73b9fb;
+$color-default-screen: #e6e6e6;
+
+$color-autumn-sage: #b5b057;
+$color-autumn-cordovan: #8e3b46;
+$color-autumn-true-blue: #2f66c6;
+$color-autumn-foam: #5bb29e;
+$color-autumn-screen: #dae7e4;
+
+// Theme maps
+
+// DEFAULT THEME
+$theme-default-map: (
+  bg-color: #f8f8f8,
+  bg-contrast: #fff,
+  text-color: #333,
+  text-muted: #999,
+  link-hover: #000,
+  line-color: #eee,
+  theme-accent: $color-default-purple,
+  theme-accent-text: to-text($color-default-purple),
+  theme-pop: $color-default-pink,
+  theme-pop-text: to-text($color-default-pink),
+  theme-secondary: $color-default-blue,
+  theme-secondary-text: to-text($color-default-blue),
+  theme-alt: $color-default-teal,
+  theme-alt-text: to-text($color-default-teal),
+  screen: $color-default-screen,
+  screen-alt:
+    adjust-color(
+      $color: $color-default-blue,
+      $lightness: 23%,
+    ),
+);
+
+$theme-default-dark-map: (
+  bg-color: #222,
+  bg-contrast: #111,
+  text-color: #f8f8f8,
+  link-hover: #fff,
+  line-color: #888,
+  theme-accent: adjust-color($color-default-purple, $lightness: 15%),
+  theme-accent-text:
+    to-text(adjust-color($color-default-purple, $lightness: 15%)),
+  // theme-pop: $color-default-pink,
+  // theme-pop-text: to-text($color-default-pink),
+  // theme-secondary: $color-default-blue,
+  // theme-secondary-text: to-text($color-default-blue),
+  theme-alt: adjust-color($color-default-teal, $lightness: 8%),
+  theme-alt-text: to-text(adjust-color($color-default-teal, $lightness: 8%)),
+  screen: #404040,
+  screen-alt:
+    adjust-color(
+      $color: $color-default-blue,
+      $lightness: 5%,
+      $alpha: -0.8,
+    ),
+);
+
+$theme-autumn-map: (
+  bg-color: #f8f0ec,
+  bg-contrast: #fff,
+  text-color: #333,
+  text-muted: #999,
+  link-hover: #000,
+  line-color: #eee,
+  theme-accent: $color-autumn-cordovan,
+  theme-accent-text: to-text($color-autumn-cordovan),
+  theme-pop: $color-autumn-sage,
+  theme-pop-text: to-text($color-autumn-sage),
+  theme-secondary: $color-autumn-true-blue,
+  theme-secondary-text: to-text($color-autumn-true-blue),
+  theme-alt: $color-autumn-foam,
+  theme-alt-text: to-text($color-autumn-foam),
+  screen: #e7e6e6,
+  screen-alt: $color-autumn-screen,
+);
+
+$theme-autumn-dark-map: (
+  bg-color: #2c1619,
+  bg-contrast: #1e0b0d,
+  text-color: #d1af9e,
+  text-muted: #987e81,
+  link-hover: #fff,
+  line-color: #dcc9c0,
+  theme-accent: $color-autumn-cordovan,
+  theme-accent-text: to-text($color-autumn-cordovan),
+  theme-pop: $color-autumn-sage,
+  theme-pop-text: to-text($color-autumn-sage),
+  theme-secondary: color.adjust($color-autumn-true-blue, $lightness: -5%),
+  theme-secondary-text: to-text($color-autumn-true-blue),
+  theme-alt: color.adjust($color-autumn-foam, $lightness: -10%),
+  theme-alt-text: to-text($color-autumn-foam),
+  screen: color.adjust(#2c1619, $lightness: 5%),
+  screen-alt: color.change(#371c1f, $lightness: 10%, $alpha: 0.4),
+);

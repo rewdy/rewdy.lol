@@ -1,6 +1,6 @@
 .article h1,
 .article .h1 {
-  color: var(--theme-teal);
+  color: var(--theme-alt);
 }
 
 $link-bg-width: 3rem;
@@ -9,13 +9,13 @@ $link-bg-width: 3rem;
   &:hover {
     background: linear-gradient(
       120deg,
-      var(--accent) 0,
-      var(--pop) $link-bg-width * 0.5,
-      var(--accent) $link-bg-width
+      var(--theme-accent) 0,
+      var(--theme-pop) $link-bg-width * 0.5,
+      var(--theme-accent) $link-bg-width
     );
     background-size: $link-bg-width 1rem;
     animation: gradient-slide 1s linear 250ms infinite;
-    color: var(--white);
+    color: #fff; // this one we want WHITE b/c the background is colored
   }
 }
 

@@ -1,48 +1,12 @@
 @import "./vars";
 @import "./base";
 
-.section {
-  .liner {
-    box-sizing: border-box;
-    padding: 3rem 4rem;
-    margin: 0;
-    width: 100%;
-    max-width: 1000px;
-    @media only screen and (max-width: $breakpoint-sm) {
-      padding: 2rem;
-    }
-  }
-  .liner-center {
-    padding: 2rem 4rem;
-  }
-  &-primary {
-    background: var(--bg) var(--wave-img);
-    background-size: 60px 15px;
-    color: var(--theme-teal);
-  }
-  &-more {
-    background-color: var(--bg-white);
-    .h-wrap {
-      display: inline-block;
-      background-color: var(--theme-blue);
-      color: var(--bg-white);
-      padding: 0.75rem 3rem 0.75rem 0.75rem;
-    }
-  }
-  &-smush {
-    .liner {
-      padding-top: 0;
-    }
-    h2 {
-      position: relative;
-      transform: translateY(-50%);
-      margin-bottom: 0;
-    }
-  }
+.box {
+  padding: 1rem;
 }
 
 .footer {
-  color: var(--gray);
+  color: var(--text-muted);
 }
 
 .articles-list {

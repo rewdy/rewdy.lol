@@ -13,6 +13,7 @@ import madeWithMacos from "../images/made-with-macos.png";
 
 const { title, isHome = false } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -52,5 +53,11 @@ const { title, isHome = false } = Astro.props;
         </p>
       </Section>
     </footer>
+    <script is:inline>
+      const seasons = ["winter", "spring", "summer", "autumn"];
+      const month = new Date().getMonth();
+      const currentSeason = seasons[Math.floor(((month + 1) % 12) / 3)];
+      document.body.classList.add(`theme-${currentSeason}`);
+    </script>
   </body>
 </html>

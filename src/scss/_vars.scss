@@ -1,17 +1,13 @@
+@use "sass:list";
+
+@import "./functions";
+@import "./theme-definitions";
+
 // CSS Vars
 // Only really have these so I can use them with color functions as needed.
-$bg: #f8f8f8;
 $color: #333;
 $gray: #999;
 $screen: #e6e6e6;
-
-$pop: #f93deb;
-$accent: #870be0;
-
-$theme-blue: #73b9fb;
-$theme-blue-dark: adjust-color($theme-blue, $lightness: -10%);
-$theme-teal: #1296af;
-$theme-teal-dark: adjust-color($theme-teal, $lightness: -10%);
 
 $font-family: "Karla", sans-serif;
 $font-size: 24px;
@@ -31,46 +27,44 @@ $section-pad-x-sm: 2rem;
 $breakpoint-sm: 540px;
 
 :root {
-  --bg: #{$bg};
-  --color: #{$color};
-  --bg-white: #fff;
-  --white: #fff;
-  --gray: #{$gray};
-  --screen: #{$screen};
-  --pop: #{$pop};
-  --accent: #{$accent};
-  --link-hover: #000;
-  --theme-blue: #{$theme-blue};
-  --theme-blue-dark: #{$theme-blue-dark};
-  --theme-teal: #{$theme-teal};
-  --theme-teal-dark: #{$theme-teal-dark};
-  --screen-teal: #{adjust-color($color: $theme-blue, $lightness: 23%)};
-  --wave-img: url("/wave.svg");
+  // non colors
   --font-family: #{$font-family};
   --font-size: #{$font-size};
   --font-size-sm: #{$font-size-sm};
   --font-size-code: #{$font-size-code};
   --line-height: #{$line-height};
-  --line-color: #eee;
   --font-weight-bold: #{$font-weight-bold};
   --margin-bottom: #{$margin-bottom};
   --section-pad-x: #{$section-pad-x};
   --section-pad-y: #{$section-pad-y};
   --section-pad-x-sm: #{$section-pad-x-sm};
   --section-pad-y-sm: #{$section-pad-y-sm};
+
+  // colors, overriden by theme
+  @each $theme, $color in $theme-default-map {
+    --#{$theme}: #{$color};
+  }
+  --wave-img: url("/wave.svg");
+
   @media (prefers-color-scheme: dark) {
-    --bg: #222;
-    --color: #{$bg};
-    --bg-white: #111;
-    --accent: #{adjust-color($accent, $lightness: 15%)};
-    --link-hover: #fff;
-    --theme-teal: #{adjust-color($theme-teal, $lightness: 8%)};
-    --screen-teal: #{adjust-color(
-        $color: $theme-blue,
-        $lightness: 5%,
-        $alpha: -0.8
-      )};
+    @each $theme, $color in $theme-default-dark-map {
+      --#{$theme}: #{$color};
+    }
     --wave-img: url("/wave-night.svg");
-    --line-color: #888;
+  }
+}
+
+// Theme setup
+.theme-autumn {
+  // colors
+  @each $theme, $color in $theme-autumn-map {
+    --#{$theme}: #{$color};
+    --wave-img: url("/wave-autumn.svg");
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @each $theme, $color in $theme-autumn-dark-map {
+      --#{$theme}: #{$color};
+    }
   }
 }

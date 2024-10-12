@@ -7,7 +7,6 @@ import Section from "./Section.astro";
 
 import { Image } from "astro:assets";
 
-import starSvg from "../images/star.svg";
 import { siteTitle } from "../siteData";
 import Intro from "./Intro.astro";
 
@@ -18,13 +17,15 @@ const sectionClasses = ["section-primary"];
 if (!isHome) {
   sectionClasses.push("section-condensed section-flex");
 }
+
+const { default: starSvg } = await import("../images/star.svg?raw");
 ---
 
 <header>
   <Section cssClass={sectionClasses.join(" ")}>
     <div class="star">
       <LinkOrNot isLink={!isHome} href="/" title="Go home">
-        <Image src={starSvg} alt="A star" />
+        <Fragment set:html={starSvg} />
       </LinkOrNot>
     </div>
     {

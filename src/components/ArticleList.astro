@@ -15,7 +15,7 @@ const { posts } = Astro.props;
       <article class="article-list-item" itemscope itemtype="http://schema.org/Article">
         <header>
           <h2>
-            <a href={`articles/${post.slug}`} itemprop="url">
+            <a href={`/articles/${post.slug}`} itemprop="url">
               <span itemprop="headline">{post.data.title}</span>
             </a>
           </h2>
@@ -23,7 +23,7 @@ const { posts } = Astro.props;
         </header>
         <p itemprop="description">{post.data.description}</p>
         <p>
-          <a href={`articles/${post.slug}`} class="btn btn-outline">
+          <a href={`/articles/${post.slug}`} class="btn btn-outline">
             Om nom let me read &rarr;
           </a>
         </p>
