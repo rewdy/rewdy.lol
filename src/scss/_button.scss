@@ -2,6 +2,7 @@
   font-size: var(--font-size-sm);
   display: inline-block;
   padding: 0.25em 1em;
+  cursor: pointer;
   &-outline {
     text-decoration: none;
     border: 1px solid currentColor;
@@ -13,5 +14,10 @@
   &-pop {
     color: #fff;
     background-color: var(--theme-pop);
+  }
+  &-text {
+    border: 0 none;
+    background-color: transparent;
+    padding: 0;
   }
 }

@@ -1,0 +1,19 @@
+.active-theme {
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 50%;
+    width: 1.5rem;
+    height: 2px;
+    overflow: hidden;
+    transform: translateX(-50%);
+    border: 1px dotted var(--theme-accent);
+  }
+  &.custom:after {
+    border-style: solid;
+    background-color: var(--theme-accent);
+  }
+}

@@ -5,11 +5,13 @@ interface Props {
 }
 
 import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Section from "../components/Section.astro";
 import { description } from "../siteData";
 import "../scss/style.scss";
 import madeWithMacos from "../images/made-with-macos.png";
+import { ThemeManager } from "../components/ThemeManager.tsx";
 
 const { title, isHome = false } = Astro.props;
 ---
@@ -19,6 +21,7 @@ const { title, isHome = false } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
+    <ViewTransitions transition:animate="slide" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -51,13 +54,15 @@ const { title, isHome = false } = Astro.props;
         <p class="text-center">
           <Image src={madeWithMacos} alt="Made with MacOS" />
         </p>
+        <hr class="halfling" />
+        <ThemeManager client:only="react" />
       </Section>
     </footer>
-    <script is:inline>
+    <!-- <script is:inline>
       const seasons = ["winter", "spring", "summer", "autumn"];
       const month = new Date().getMonth();
       const currentSeason = seasons[Math.floor(((month + 1) % 12) / 3)];
       document.body.classList.add(`theme-${currentSeason}`);
-    </script>
+    </script> -->
   </body>
 </html>
