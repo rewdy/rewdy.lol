@@ -1,7 +1,7 @@
 @use "sass:list";
 
 @import "./functions";
-@import "./theme-definitions";
+@import "./theme-builder";
 
 // CSS Vars
 // Only really have these so I can use them with color functions as needed.
@@ -26,6 +26,35 @@ $section-pad-x-sm: 2rem;
 
 $breakpoint-sm: 540px;
 
+// THEME COLORS
+
+// Default theme. (I'm using for Winter)
+$default-theme-base: #870be0;
+$default-theme-secondary: #73b9fb;
+$default-gray-base: #757575; // Should be 50-ish% lightness!
+
+// WINTER (alternative, not using)
+// $winter-theme-base: #18a4ff;
+// $winter-theme-secondary: #a16ec5;
+// $winter-gray-base: #4a7eb2;
+
+// SPRING
+$spring-theme-base: #2bd575;
+$spring-theme-secondary: #ffd456;
+$spring-gray-base: #96d52b;
+
+// SUMMER
+$summer-theme-base: #00d7b9;
+$summer-theme-secondary: #ff6219;
+$summer-gray-base: #7f7f7f;
+
+// FALL
+$fall-theme-base: #8e3b46;
+$fall-theme-secondary: #8fb749;
+$fall-gray-base: #b4714b;
+
+// Now the CSS
+
 :root {
   // non colors
   --font-family: #{$font-family};
@@ -41,30 +70,61 @@ $breakpoint-sm: 540px;
   --section-pad-y-sm: #{$section-pad-y-sm};
 
   // colors, overriden by theme
-  @each $theme, $color in $theme-default-map {
-    --#{$theme}: #{$color};
-  }
+  @include make-theme(
+    $base: $default-theme-base,
+    $secondary: $default-theme-secondary,
+    $gray: $default-gray-base
+  );
   --wave-img: url("/wave.svg");
 
   @media (prefers-color-scheme: dark) {
-    @each $theme, $color in $theme-default-dark-map {
-      --#{$theme}: #{$color};
-    }
+    // @each $theme, $color in $theme-default-dark-map {
+    //   --#{$theme}: #{$color};
+    // }
     --wave-img: url("/wave-night.svg");
   }
 }
 
 // Theme setup
-.theme-autumn {
+.theme-winter {
   // colors
-  @each $theme, $color in $theme-autumn-map {
-    --#{$theme}: #{$color};
-    --wave-img: url("/wave-autumn.svg");
-  }
+  @include make-theme(
+    $base: $default-theme-base,
+    $secondary: $default-theme-secondary,
+    $gray: $default-gray-base
+  );
+  --wave-img: url("/wave-winter.svg");
 
-  @media (prefers-color-scheme: dark) {
-    @each $theme, $color in $theme-autumn-dark-map {
-      --#{$theme}: #{$color};
-    }
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   @each $theme, $color in $theme-autumn-dark-map {
+  //     --#{$theme}: #{$color};
+  //   }
+  // }
+}
+
+.theme-spring {
+  @include make-theme(
+    $base: $spring-theme-base,
+    $secondary: $spring-theme-secondary,
+    $gray: $spring-gray-base
+  );
+  --wave-img: url("/wave-spring.svg");
+}
+
+.theme-summer {
+  @include make-theme(
+    $base: $summer-theme-base,
+    $secondary: $summer-theme-secondary,
+    $gray: $summer-gray-base
+  );
+  --wave-img: url("/wave-summer.svg");
+}
+
+.theme-autumn {
+  @include make-theme(
+    $base: $fall-theme-base,
+    $secondary: $fall-theme-secondary,
+    $gray: $fall-gray-base
+  );
+  --wave-img: url("/wave-autumn.svg");
 }

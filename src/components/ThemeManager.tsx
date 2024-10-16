@@ -26,7 +26,7 @@ export const ThemeManager: React.FC = () => {
   const themeClass = `theme-${season}`;
 
   const handleSetTheme = (season: Season) => {
-    if (themeSeason === season) {
+    if (currentSeason === season) {
       setThemeSeason(undefined);
     } else {
       setThemeSeason(season);

@@ -171,9 +171,9 @@ small {
   font-size: var(--font-size-sm);
 }
 
-@each $tag, $colors in $theme-default-map {
-  .bg-#{$tag} {
-    background-color: var(--#{$tag});
-    color: var(--#{$tag}-text);
+@each $name, $var-base in $theme-vars {
+  .bg-#{$name} {
+    background-color: var(--#{$var-base});
+    color: var(--#{$var-base}-text);
   }
 }

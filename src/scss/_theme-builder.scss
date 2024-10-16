@@ -1,0 +1,50 @@
+@use "sass:color";
+
+$theme-vars: (
+  accent: theme-accent,
+  pop: theme-pop,
+  secondary: theme-secondary,
+  alt: theme-alt,
+  screen: screen,
+  screen-alt: screen-alt,
+);
+
+@function text-color($bg-color, $black: #000, $white: #fff, $threshold: 50%) {
+  @if color.blackness(color.grayscale($color)) < $threshold {
+    @return $black;
+  }
+  @return $white;
+}
+
+// Theme mixin and calculates values and generates the CSS
+@mixin make-theme($base, $secondary, $gray, $dark: false) {
+  $theme-pop: color.adjust($base, $hue: 30deg, $lightness: 10%);
+  $theme-alt: color.change(
+    color.adjust($secondary, $hue: -18deg),
+    $lightness: 38%,
+    $saturation: 81%
+  );
+  $bg-color: color.change($gray, $lightness: 95%);
+  $theme-colors: (
+    theme-accent: $base,
+    theme-accent-text: text-color($base),
+    theme-pop: $theme-pop,
+    theme-pop-text: text-color($theme-pop),
+    theme-secondary: $secondary,
+    theme-secondary-text: text-color($secondary),
+    theme-alt: $theme-alt,
+    theme-alt-text: text-color($theme-alt),
+    screen: color.change($gray, $lightness: 90%),
+    screen-alt: color.change($secondary, $lightness: 80%, $alpha: 0.3),
+    text-color: color.change($gray, $lightness: 20%),
+    text-muted: color.change($gray, $lightness: 40%),
+    link-hover: text-color($bg-color),
+    bg-color: $bg-color,
+    bg-contrast: color.change($gray, $lightness: 98%),
+    line-color: color.change($gray, $lightness: 86%),
+  );
+
+  @each $key, $color in $theme-colors {
+    --#{$key}: #{$color};
+  }
+}
