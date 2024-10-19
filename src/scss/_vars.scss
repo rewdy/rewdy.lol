@@ -39,19 +39,19 @@ $default-gray-base: #757575; // Should be 50-ish% lightness!
 // $winter-gray-base: #4a7eb2;
 
 // SPRING
-$spring-theme-base: #2bd575;
-$spring-theme-secondary: #ffd456;
-$spring-gray-base: #96d52b;
+// $spring-theme-base: #2bd575;
+// $spring-theme-secondary: #ffd456;
+// $spring-gray-base: #96d52b;
 
 // SUMMER
-$summer-theme-base: #00d7b9;
-$summer-theme-secondary: #ff6219;
-$summer-gray-base: #7f7f7f;
+// $summer-theme-base: #00d7b9;
+// $summer-theme-secondary: #ff6219;
+// $summer-gray-base: #7f7f7f;
 
 // FALL
-$fall-theme-base: #8e3b46;
-$fall-theme-secondary: #8fb749;
-$fall-gray-base: #b4714b;
+// $fall-theme-base: #8e3b46;
+// $fall-theme-secondary: #8fb749;
+// $fall-gray-base: #b4714b;
 
 // Now the CSS
 
@@ -69,7 +69,7 @@ $fall-gray-base: #b4714b;
   --section-pad-x-sm: #{$section-pad-x-sm};
   --section-pad-y-sm: #{$section-pad-y-sm};
 
-  // colors, overriden by theme
+  // colors, overridden by theme
   @include make-theme(
     $base: $default-theme-base,
     $secondary: $default-theme-secondary,
@@ -78,53 +78,11 @@ $fall-gray-base: #b4714b;
   --wave-img: url("/wave.svg");
 
   @media (prefers-color-scheme: dark) {
-    // @each $theme, $color in $theme-default-dark-map {
-    //   --#{$theme}: #{$color};
-    // }
+    @include make-dark-theme(
+      $base: $default-theme-base,
+      $secondary: $default-theme-secondary,
+      $gray: $default-gray-base
+    );
     --wave-img: url("/wave-night.svg");
   }
-}
-
-// Theme setup
-.theme-winter {
-  // colors
-  @include make-theme(
-    $base: $default-theme-base,
-    $secondary: $default-theme-secondary,
-    $gray: $default-gray-base
-  );
-  --wave-img: url("/wave.svg");
-
-  // @media (prefers-color-scheme: dark) {
-  //   @each $theme, $color in $theme-autumn-dark-map {
-  //     --#{$theme}: #{$color};
-  //   }
-  // }
-}
-
-.theme-spring {
-  @include make-theme(
-    $base: $spring-theme-base,
-    $secondary: $spring-theme-secondary,
-    $gray: $spring-gray-base
-  );
-  --wave-img: url("/wave-spring.svg");
-}
-
-.theme-summer {
-  @include make-theme(
-    $base: $summer-theme-base,
-    $secondary: $summer-theme-secondary,
-    $gray: $summer-gray-base
-  );
-  --wave-img: url("/wave-summer.svg");
-}
-
-.theme-autumn {
-  @include make-theme(
-    $base: $fall-theme-base,
-    $secondary: $fall-theme-secondary,
-    $gray: $fall-gray-base
-  );
-  --wave-img: url("/wave-autumn.svg");
 }

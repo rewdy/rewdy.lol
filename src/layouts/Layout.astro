@@ -54,15 +54,7 @@ const { title, isHome = false } = Astro.props;
         <p class="text-center">
           <Image src={madeWithMacos} alt="Made with MacOS" />
         </p>
-        <hr class="halfling" />
-        <ThemeManager client:only="react" />
       </Section>
     </footer>
-    <!-- <script is:inline>
-      const seasons = ["winter", "spring", "summer", "autumn"];
-      const month = new Date().getMonth();
-      const currentSeason = seasons[Math.floor(((month + 1) % 12) / 3)];
-      document.body.classList.add(`theme-${currentSeason}`);
-    </script> -->
   </body>
 </html>
