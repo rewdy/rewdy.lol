@@ -1,0 +1,50 @@
+---
+title: I rebuilt my website
+date: "Sat Oct 19 17:17:43 CDT 2024"
+description: "I rebuilt my website using Astro"
+---
+
+My website here has always been little more than a place to play around and try stuff. It has had many iterations over the years based on what I was interested in at the time and what I was learning. Recently, I decided I wanted to add this blog so I started the process to retool how I built the site.
+
+Before we talk about that, though, just for fun I'll mention that since I created [rewdy.com](http://rewdy.com) (now rewdy.lol 😂), it has been built at some point with:
+
+* Regular old html
+* WordPress (many iterations)
+* Drupal
+* [SymphonyCMS](https://www.getsymphony.com) (I do not recommend, but was fun; all XSLT-based...)
+* A [Nunjucks](https://mozilla.github.io/nunjucks/)-based [setup](https://github.com/rewdy/bonvoyage) to build the html
+
+...and probably a few others I'm forgetting. 🙃
+
+To add the blog, I tried a few things but ultimately "landed" on using [Astro 🚀](https://astro.build)!
+
+![Astro](./astro-logo.svg)
+
+## What/why Astro?
+
+According to [the borg](https://gemini.google.com):
+
+> [Astro](https://astro.build) is a web framework designed to build fast and content-focused websites. It's known for its ability to render components on the server, which means websites load quickly and have minimal JavaScript overhead. This makes Astro ideal for content-heavy websites like blogs, marketing pages, and e-commerce sites.
+
+Astro is one of the many new-breed, web front-end frameworks that give you the ability to do your <abbr title="Server-side Rendering">SSR</abbr> + (optional) client-side JS to generate performant websites. Some things I like about Astro are:
+
+* It's not tied to any one UI framework. You can use: React, Vue, Preact, Svelte, or Solid (and maybe others unofficially). I am a React person, but it's nice it will handle whatever.
+* No complex graphQL/other querying technology for simple, static websites. I have previously played around with [Gatsby](https://www.gatsbyjs.com) (conceptually very similar to Astro), and while there are things about it I like, the overhead/boilerplate for querying simple markdown content was kind of ridiculous. (I actually built this whole site with it and hated the result so much I never published it.)  
+For blogs or other collections of content, Astro has "[Collections](https://docs.astro.build/en/guides/content-collections/)" that end up being super easy to set up, requiring 0-20 lines (ish) of config and that's it. For me, this is *much better*.
+* Overall, it's fast and painless to do mostly anything you want. Would recommend.
+
+## A few light learnings
+
+### You might not need React*
+
+**Or whichever framework you normally use.*
+
+Astro fully supports using React components in your content. This is really nice for scenarios where you want client-side JS with whatever interactions are required. For this site, I started out using React, then as I built more I realized that I really didn't need it—it's a static site ultimately. At some point I switched over to using all [`.astro`](https://docs.astro.build/en/basics/astro-pages/#astro-pages) files for (which are basically JSX) and that was totally sufficient.
+
+### Image handling is great for most sites; not all
+
+I would say image handling in Astro is great, so long as you're not building a *photo-based website*. I didn't deal with this this on this website, but I built a website for my [sister's tattoo shop](https://workofinktattoo.com) using Astro as well. For that site, it took a lot more effort to get photos to do what I wanted them to. I have used static site generators in the past (maybe Gatsby... ?) that do a lot more automatic processing of the images for you (or even that have photo gallery plugins to do all the heavy lifting!). In Astro, loading a bunch of image *files* to create a dynamic photo gallery wasn't super straight forward. This could have been my own ignorance, but I don't think that was entirely the case.
+
+This really wasn't a big deal to me because it did everything else so well, but mentioning here just for the full picture.
+
+And that's about it.
