@@ -93,7 +93,7 @@ $fall-gray-base: #b4714b;
     $secondary: $default-theme-secondary,
     $gray: $default-gray-base
   );
-  --wave-img: url("/wave-winter.svg");
+  --wave-img: url("/wave.svg");
 
   // @media (prefers-color-scheme: dark) {
   //   @each $theme, $color in $theme-autumn-dark-map {
