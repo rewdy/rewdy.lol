@@ -6,6 +6,8 @@ export const author = {
   summary: "Live, laugh, LEARN. 🌟",
 };
 export const siteUrl = "https://rewdy.lol/";
+export const profilePicGravatar =
+  "https://0.gravatar.com/avatar/155922f7ef901b0454f68d93f7c361dac5bec2e5449213d87bb1b45e15b9d187?size=256";
 
 export type SocialLinkType = {
   label: string;

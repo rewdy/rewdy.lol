@@ -1,8 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-import profilePic from "../images/profile-pic.jpg";
-import { author, socialLinks as social } from "../siteData.ts";
+import { author, profilePicGravatar, socialLinks as social } from "../siteData.ts";
 import SocialLink from "./SocialLink.astro";
 
 import "./Bio.scss";
@@ -13,7 +12,7 @@ import "./Bio.scss";
     <div class="avatar">
       <Image
         class="bio-avatar"
-        src={profilePic}
+        src={profilePicGravatar}
         width={50}
         height={50}
         quality={80}

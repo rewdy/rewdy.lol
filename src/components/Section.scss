@@ -32,7 +32,8 @@
     background-color: var(--bg-contrast);
     .h-wrap {
       background-color: var(--theme-secondary);
-      color: var(--theme-secondary-text);
+      // color: var(--theme-secondary-text);
+      color: #fff; // this should be black, but i don't like the way it looks. :(
     }
   }
   &-condensed {
