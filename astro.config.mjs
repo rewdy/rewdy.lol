@@ -15,7 +15,7 @@ export default defineConfig({
       preprocessorOptions: {
         scss: {
           // This is needed to tell vite to use the new sass api
-          api: "modern-compiler", 
+          api: "modern-compiler",
         },
       },
     },
