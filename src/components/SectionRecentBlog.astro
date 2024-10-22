@@ -3,19 +3,25 @@ import ArticleList from "./ArticleList.astro";
 import { getCollection } from "astro:content";
 import Section from "./Section.astro";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
+const posts = (
+  await getCollection("blog", ({ data }) => data.draft !== true)
+).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const showAllLink = posts.length > 3;
+const postsTop3 = posts.slice(0, 3);
 ---
 
 <Section>
   <h2>
     <span class="h-wrap">
-      <span role="img" title="shrug">
-        🤷‍♂️
-      </span>{" "}
+      <span role="img" title="shrug"> 🤷‍♂️ </span>{" "}
       Articles or whatnot
     </span>
   </h2>
-  <ArticleList posts={posts} />
+  <ArticleList posts={postsTop3} />
+  {showAllLink && (
+    <hr />
+    <p>
+      <a href="/articles" class="btn btn-wow">More articles</a>
+    </p>
+  )}
 </Section>

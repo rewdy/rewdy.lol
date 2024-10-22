@@ -6,7 +6,7 @@ const blogPostSchema = z.object({
   // Transform string to Date object
   date: z.coerce.date(),
   updated: z.coerce.date().optional(),
-  heroImage: z.string().optional(),
+  draft: z.boolean().optional(),
 });
 
 const blog = defineCollection({

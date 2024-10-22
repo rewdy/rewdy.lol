@@ -1,0 +1,10 @@
+@import "../scss/vars";
+
+.home-nav {
+  text-align: center;
+  background-color: var(--bg-contrast);
+  padding: 1rem var(--section-pad-x);
+  @media only screen and (max-width: $breakpoint-sm) {
+    padding: 1rem var(--section-pad-x-sm);
+  }
+}

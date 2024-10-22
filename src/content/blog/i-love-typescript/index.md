@@ -68,7 +68,7 @@ const user: {
 
 ## Typing functions
 
-For some reason, this one was confusing to me initially. To type a function, it's just a matter of syntax. You will use `(args) => return type`. Peep this:
+For some reason, this one was confusing to me initially. I think the reason it was confusing to me is that I was expecting there to be a _type_ for a function. However, since all parts of the function should be typed (args and return value), to type a function it's just a matter of syntax. You will use `(args) => return type`. Peep this:
 
 ```ts
 // typing
@@ -81,6 +81,16 @@ const capitalize: CapitalizeFunc = (text) => {
 
 // or do it inline
 const capitalize2 = (text: string): string => text[0].toUpperCase() + text.slice(1);
+```
+
+Above we use constants that have a value set to an anonymous function. One benefit of doing this is that it prevents the function from being redefined later on. It comes with a set of asterisks, though. I'll point you to a [Google search for those](https://www.google.com/search?q=const+vs+function+javascript).
+
+If you prefer to write `function() { ... }` style functions, you can do so, but you can't create a type to represent the whole function in the same way (that I know of...). You would do it like this:
+
+```ts
+function capitalize(text: string): string {
+  return text[0].toUpperCase() + text.slice(1);
+}
 ```
 
 ## Utility types

@@ -2,6 +2,7 @@
 title: Terminal illness
 date: "2023-04-05T22:59:14Z"
 description: How to make your terminal the illest
+draft: true
 ---
 
 Yes. It's an inappropriate title. I should change it...

@@ -1,23 +1,56 @@
 .btn {
   font-size: var(--font-size-sm);
   display: inline-block;
-  padding: 0.25em 1em;
+  padding: 0.25rem 1rem;
   cursor: pointer;
   &-outline {
     text-decoration: none;
     border: 1px solid currentColor;
   }
   &-accent {
-    color: #fff;
+    color: var(--theme-accent-text);
     background-color: var(--theme-accent);
   }
   &-pop {
-    color: #fff;
+    color: var(--theme-pop-text);
     background-color: var(--theme-pop);
   }
   &-text {
     border: 0 none;
     background-color: transparent;
     padding: 0;
+  }
+  &-wow {
+    color: var(--theme-pop-text);
+    background: linear-gradient(
+      to right,
+      var(--theme-pop),
+      var(--theme-accent)
+    );
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      border-style: solid;
+      border-color: transparent transparent transparent var(--theme-accent);
+      border-width: 1rem 0 1rem 1rem;
+    }
+    &:hover {
+      animation: jiggle 0.3s infinite alternate;
+    }
+  }
+}
+
+@keyframes jiggle {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0.25rem);
   }
 }

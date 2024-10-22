@@ -9,7 +9,7 @@ $theme-vars: (
   screen-alt: screen-alt,
 );
 
-@function text-color($bg-color, $black: #000, $white: #fff, $threshold: 50%) {
+@function text-color($bg-color, $black: #000, $white: #fff, $threshold: 60%) {
   @if color.channel($bg-color, "lightness", $space: hsl) > $threshold {
     @return $black;
   } @else {

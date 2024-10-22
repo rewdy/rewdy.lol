@@ -4,7 +4,9 @@ date: "Sat Oct 19 17:17:43 CDT 2024"
 description: "I rebuilt my website using Astro"
 ---
 
-My website here has always been little more than a place to play around and try stuff. It has had many iterations over the years based on what I was interested in at the time and what I was learning. Recently, I decided I wanted to add this blog so I started the process to retool how I built the site.
+import astroLogo from "./astro-logo.svg?raw";
+
+My website here has always been, more-or-less, just a little place for me to play around and try stuff. It has had many iterations over the years based on what I was interested in at the time and what I was learning. Recently, I decided I wanted to add this blog so I started the process to retool how I build the site.
 
 Before we talk about that, though, just for fun I'll mention that since I created [rewdy.com](http://rewdy.com) (now rewdy.lol 😂), it has been built at some point with:
 
@@ -12,13 +14,15 @@ Before we talk about that, though, just for fun I'll mention that since I create
 * WordPress (many iterations)
 * Drupal
 * [SymphonyCMS](https://www.getsymphony.com) (I do not recommend, but was fun; all XSLT-based...)
-* A [Nunjucks](https://mozilla.github.io/nunjucks/)-based [setup](https://github.com/rewdy/bonvoyage) to build the html
+* A [Nunjucks](https://mozilla.github.io/nunjucks/)-based [setup](https://github.com/rewdy/bonvoyage) to build static html (most recent)
 
 ...and probably a few others I'm forgetting. 🙃
 
 To add the blog, I tried a few things but ultimately "landed" on using [Astro 🚀](https://astro.build)!
 
-![Astro](./astro-logo.svg)
+<div class="text-center">
+  <a href="https://astro.build"><Fragment set:html={astroLogo} /></a>
+</div>
 
 ## What/why Astro?
 
@@ -47,4 +51,8 @@ I would say image handling in Astro is great, so long as you're not building a *
 
 This really wasn't a big deal to me because it did everything else so well, but mentioning here just for the full picture.
 
-And that's about it.
+---
+
+And that's about it! If you're curious and you like to poke around 🫵, the [source code is all available on GitHub](https://github.com/rewdy/rewdy.lol).
+
+Hope you like ✌️ 💙.
