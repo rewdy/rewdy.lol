@@ -6,6 +6,7 @@
     "astro": "astro",
     "build": "astro check && astro build",
     "check": "astro check && biome ci",
+    "check:fix": "biome check --write",
     "dev": "astro dev",
     "format": "biome format --write",
     "lint:fix": "biome lint --write",

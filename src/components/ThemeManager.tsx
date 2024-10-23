@@ -1,6 +1,6 @@
+import { useLocalStorageState } from "ahooks";
 import type React from "react";
 import { useEffect } from "react";
-import { useLocalStorageState } from "ahooks";
 
 import "./ThemeManager.scss";
 
