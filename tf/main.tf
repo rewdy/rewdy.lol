@@ -27,7 +27,7 @@ module "aws_static_website" {
 
   # Domain name you want to use; can be the domain root or a sub domain
   domain_name = "rewdy.lol"
-  support_spa = true
+  support_spa = false
   create_certificate = true
 
   tags = {
