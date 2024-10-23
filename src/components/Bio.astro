@@ -6,9 +6,9 @@ import {
   profilePicGravatar,
   socialLinks as social,
 } from "../siteData.ts";
-import SocialLink from "./SocialLink.astro";
 
 import "./Bio.scss";
+import YouCanFindMe from "./YouCanFindMe.astro";
 ---
 
 <div class="bio">
@@ -33,14 +33,7 @@ import "./Bio.scss";
   </div>
   {
     social && (
-      <p>
-        You can find me around the internet at:{" "}
-        <SocialLink social={social.twitter} />,{" "}
-        <SocialLink social={social.instagram} />,{" "}
-        <SocialLink social={social.github} />,{" "}
-        <SocialLink social={social.gitlab} />, and{" "}
-        <SocialLink social={social.linkedin} />.
-      </p>
+      <YouCanFindMe />
     )
   }
 </div>

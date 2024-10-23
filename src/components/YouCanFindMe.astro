@@ -1,0 +1,13 @@
+---
+import { socialLinks as social } from "../siteData.ts";
+import SocialLink from "./SocialLink.astro";
+---
+
+<p>
+  You can find me around the internet at:{" "}
+  <SocialLink social={social.github} />,{" "}
+  <SocialLink social={social.gitlab} />,{" "}
+  <SocialLink social={social.instagram} />,{" "}
+  <SocialLink social={social.twitter} />, and{" "}
+  <SocialLink social={social.linkedin} />.
+</p>

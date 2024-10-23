@@ -1,6 +1,6 @@
 ---
-import { salutation, socialLinks as social } from "../siteData";
-import SocialLink from "./SocialLink.astro";
+import { salutation } from "../siteData";
+import YouCanFindMe from "./YouCanFindMe.astro";
 ---
 
 <h1>{salutation}</h1>
@@ -12,15 +12,8 @@ import SocialLink from "./SocialLink.astro";
   In the past I have worked in graphic design, product design, and marketing. I
   get a kick out of building things that make people smile. ☺️
 </p>
+<YouCanFindMe />
 <p>
-  You can find me around the internet at:{" "}
-  <SocialLink social={social.twitter} />,{" "}
-  <SocialLink social={social.instagram} />,{" "}
-  <SocialLink social={social.github} />,{" "}
-  <SocialLink social={social.gitlab} />, and{" "}
-  <SocialLink social={social.linkedin} />.
-</p>
-<p>
-  If you want to get in touch with me, feel free to @mention or DM me on twitter
+  If you want to get in touch with me, feel free to @ or DM me on twitter
   or linkedin.
 </p>
