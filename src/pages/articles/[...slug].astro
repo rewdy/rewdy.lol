@@ -1,5 +1,4 @@
 ---
-import { getCollection } from "astro:content";
 import Bio from "../../components/Bio.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Section from "../../components/Section.astro";
@@ -8,23 +7,20 @@ import Layout from "../../layouts/Layout.astro";
 import "./_article.scss";
 import type { InferGetStaticPropsType } from "astro";
 import ArticleNav from "../../components/ArticleNav.astro";
+import { getPublishedBlogPosts } from "../../helpers";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  // sort so we can make prev/next links
-  const sortedPosts = posts.sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
+  const posts = await getPublishedBlogPosts();
 
-  return sortedPosts.map((post, index) => {
+  return posts.map((post, index) => {
     const prevIndex = index > 0 ? index - 1 : undefined;
-    const nextIndex = index < sortedPosts.length ? index + 1 : undefined;
+    const nextIndex = index < posts.length ? index + 1 : undefined;
     return {
       params: { slug: post.slug },
       props: {
         post,
-        next: nextIndex !== undefined ? sortedPosts[nextIndex] : undefined,
-        previous: prevIndex !== undefined ? sortedPosts[prevIndex] : undefined,
+        next: nextIndex !== undefined ? posts[nextIndex] : undefined,
+        previous: prevIndex !== undefined ? posts[prevIndex] : undefined,
       },
     };
   });
@@ -40,11 +36,7 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title}>
   <Section cssClass="section-article">
-    <article
-      class="article"
-      itemscope
-      itemtype="http://schema.org/Article"
-    >
+    <article class="article" itemscope itemtype="http://schema.org/Article">
       <header>
         <FormattedDate date={post.data.date} />
         <h1 itemprop="headline">{post.data.title}</h1>

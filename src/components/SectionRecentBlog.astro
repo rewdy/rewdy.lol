@@ -1,11 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import ArticleList from "./ArticleList.astro";
 import Section from "./Section.astro";
+import { getPublishedBlogPosts } from "../helpers";
 
-const posts = (
-  await getCollection("blog", ({ data }) => data.draft !== true)
-).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const posts = await getPublishedBlogPosts();
 const showAllLink = posts.length > 3;
 const postsTop3 = posts.slice(0, 3);
 ---
