@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+
+const awkwardGifSrc =
+  "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjh0NnZtYmp1YnJtOXZldDh1anN2YmpvYnIwZGZheGpoY3lyZGFmMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JpmFGfCKiFqjVAODoW/giphy-downsized.gif";
+---
+
+<Layout title="Not Found">
+  <Section cssClass="section-more">
+    <h1>Page not found</h1>
+    <p>
+      <Image src={awkwardGifSrc} alt="This is awkward" width="384" height="320" />
+    </p>
+    <p>It looks like I've got a little problem; the page you're looking for is gone-zo. 😩 Please go <a href="/">home</a> and try again.</p>
+  </Section>
+</Layout>
