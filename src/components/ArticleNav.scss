@@ -9,8 +9,6 @@
 }
 .article-nav-links {
   display: flex;
-  // flex-wrap: wrap;
-  // justify-content: space-between;
   list-style: none;
   padding: 0;
   li {
@@ -25,8 +23,11 @@
   }
   @media only screen and (max-width: $breakpoint-sm) {
     flex-direction: column;
-    li {
+    li,
+    li:first-child,
+    li:last-child {
       padding: 1rem 0;
+      text-align: center;
     }
   }
 }

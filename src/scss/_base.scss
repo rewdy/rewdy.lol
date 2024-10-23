@@ -1,4 +1,5 @@
 @use "sass:list";
+@import "./vars";
 
 html {
   // font stuff goes on HTML so rems properly represent doc text size
@@ -14,12 +15,6 @@ body {
   color: var(--text-color);
   margin: 0;
   padding: 0;
-}
-@media only screen and (max-width: $breakpoint-sm) {
-  body {
-    font-size: 20px;
-    line-height: 1.25em;
-  }
 }
 
 h1,
@@ -133,6 +128,9 @@ blockquote {
   }
   > *:last-child {
     margin-bottom: 0;
+  }
+  @media only screen and (max-width: $breakpoint-sm) {
+    margin-left: 1em;
   }
 }
 

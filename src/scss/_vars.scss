@@ -21,8 +21,8 @@ $margin-bottom: 1em;
 
 $section-pad-y: 3rem;
 $section-pad-x: 4rem;
-$section-pad-y-sm: 2rem;
-$section-pad-x-sm: 2rem;
+$section-pad-y-sm: 1.25rem;
+$section-pad-x-sm: 1.25rem;
 
 $breakpoint-sm: 540px;
 
@@ -84,5 +84,10 @@ $default-gray-base: #757575; // Should be 50-ish% lightness!
       $gray: $default-gray-base
     );
     --wave-img: url("/wave-night.svg");
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    --font-size: 18px;
+    --line-height: 1.4em;
   }
 }
