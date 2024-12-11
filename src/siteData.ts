@@ -58,6 +58,11 @@ export const socialLinks: Record<string, SocialLinkType> = {
  */
 export const projectLinks = [
   {
+    label: "Figlet Browser",
+    description: "Browse and filter all figlet fonts to find your favorite!",
+    url: "http://figlet-browser.rewdy.lol",
+  },
+  {
     label: "Rewdy's Recipes",
     description: "A little site where I share some recipes I invent",
     url: "http://recipes.rewdy.lol",
