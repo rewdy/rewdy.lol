@@ -1,4 +1,4 @@
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 /**
  * Wrapper around Astro getCollection that sorts and
  * filters the blog posts in a consistent way.
